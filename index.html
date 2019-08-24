@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pacman Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+      body{
+        background-color:black;
+      }
+      
+      div.row div{
+        width:20px;
+        height:20px;
+        border:1px solid black;
+        display:inline-block;
+      }
+
+      div.brick{
+        background-color:blue;
+      }
+
+      div.coin{
+        background:url('coin.gif');
+        background-repeat:no-repeat;
+        background-position:center;
+
+      }
+
+      div.pacman{
+        background: url('pacman.gif');
+        background-repeat:no-repeat;
+        background-position:center;
+        background-size:cover;
+      }
+
+      div.empty{
+
+      }
+    </style>
+  </head>
+  <body>
+   
+    <div class='row'>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+    </div>
+
+    <div class='row'>
+      <div class='brick'></div>
+      <div class='coin'></div>
+      <div class='coin'></div>
+      <div class='pacman'></div>
+      <div class='coin'></div>
+      <div class='empty'></div>
+      <div class='empty'></div>
+      <div class='empty'></div>
+      <div class='coin'></div>
+      <div class='brick'></div>
+    </div>
+
+    <div class='row'>
+        <div class='brick'></div>
+        <div class='coin'></div>
+        <div class='coin'></div>
+        <div class='coin'></div>
+        <div class='coin'></div>
+        <div class='coin'></div>
+        <div class='brick'></div>
+        <div class='coin'></div>
+        <div class='coin'></div>
+        <div class='brick'></div>
+    </div>
+
+      <div class='row'>
+          <div class='brick'></div>
+          <div class='coin'></div>
+          <div class='coin'></div>
+          <div class='brick'></div>
+          <div class='coin'></div>
+          <div class='coin'></div>
+          <div class='coin'></div>
+          <div class='coin'></div>
+          <div class='coin'></div>
+          <div class='brick'></div>
+      </div>
+     
+    <div class='row'>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+      <div class='brick'></div>
+    </div>
+
+    <script>
+    
+    // List of features to build
+    // 1) Have JS display the world of brick/coin/etc
+    // 2) Have the pacman move up and down
+    var world = [
+        [2,2,2,2,2,2,2,2,2,2],
+        [2,1,1,1,1,1,1,1,1,2],
+        [2,1,1,1,1,1,1,1,1,2],
+        [2,1,1,1,1,1,1,1,1,2],
+        [2,1,1,1,1,1,1,1,1,2],
+        [2,1,1,1,1,1,1,1,1,2],
+        [2,1,1,1,1,1,1,1,1,2],
+        [2,1,1,1,1,1,1,1,1,2],
+        [2,1,1,1,1,1,1,1,1,2],
+        [2,2,2,2,2,2,2,2,2,2],
+      ];
+
+    function displayWorld(){
+      var output='';
+
+      for(var i=0;i<world.length;i++){
+        output +="\n<div class='row'>";
+        for(var j=0;j<world[i].length;j++){
+          if(world[i][j] == 2)
+            output += "\n\t<div class='brick'></div>";
+          else if (world[i][j] ==1)
+            output +="\n\tdiv class='coin'></div>";
+          else if (world[i][j]==0)
+            output +="\n\t<div class='brick'></div>";
+          
+        }
+        output +="\n</div>";
+      }
+      console.log(output);
+    }
+
+
+    
+    </script>
+    
+  </body>
+</html>
